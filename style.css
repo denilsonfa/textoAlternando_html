@@ -40,10 +40,12 @@
 }
 
 .body_site {
+    position: relative;
     z-index: 1997;
     width: 100%;
     height: 100vh;
-    padding-top: 300px;
+    display: grid;
+    align-items: center;
 }
 
 .body_site h2 {
@@ -71,4 +73,32 @@
 #img4 {
     top: 0;
     right: 0;
+}
+
+/* Card_logo */
+.logo {
+    width: 50%;
+    padding: 5px 0 5px 0;
+}
+
+.logo .logo_name {
+    font-size: calc(40px + 1vw);
+    text-align: right;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 8px;
+}
+
+.logo .logo_name b {
+    font-weight: bold;
+}
+
+.logo .logo_subname {
+    font-size: calc(32px + 1vw);
+    text-align: right;
+    font-weight: large;
+    font-size: bold;
+    margin-bottom: 0;
 }
