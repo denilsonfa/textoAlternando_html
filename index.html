@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=”pt-BR”>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>PARALLAX - Denilson Araujo DEV</title>
+
+	<!-- Style -->
+	<link rel="stylesheet" href="style.css">
+
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="bd_black">
+
+	<div class="body_site">
+		<h2>EFEITO PARALLAX</h2>
+	</div>
+
+	<div class="area_paralax">
+
+		<img id="img1" src="http://denilsonfa.cf/images/square_intosquare.svg" class="mouse" value="-5" />
+		<img id="img2" src="http://denilsonfa.cf/images/square_doublesquare01.svg" class="mouse" value="5" />
+		<img id="img3" src="http://denilsonfa.cf/images/square_intosquare.svg" class="mouse" value="5" />
+		<img id="img4" src="http://denilsonfa.cf/images/square_doublesquare02.svg" class="mouse" value="-5" />
+
+	</div>
+
+	<script type="text/javascript">
+		document.addEventListener("mousemove", parallax);
+		function parallax(event) {
+			this.querySelectorAll(".mouse").forEach((shift) => {
+				const position = shift.getAttribute("value");
+				const x = (window.innerWidth - event.pageX * position) / 60;
+				const y = (window.innerHeight - event.pageY * position) / 60;
+
+				shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+			});
+		}
+	</script>
+
+</body>
+
+</html>
